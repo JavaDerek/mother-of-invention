@@ -1,12 +1,12 @@
 {
-  "name": "witnessed",
+  "name": "mother-of-invention",
   "version": "0.1.0",
   "description": "What an observer has already seen attempted, across episodes: a plain-data ledger and one query, so a caller can tell a mind what is no longer new. Zero dependencies, no I/O.",
   "license": "MIT",
   "author": "Derek Ferguson",
   "repository": {
     "type": "git",
-    "url": "https://github.com/JavaDerek/witnessed.git"
+    "url": "https://github.com/JavaDerek/mother-of-invention.git"
   },
   "type": "module",
   "main": "dist/index.js",

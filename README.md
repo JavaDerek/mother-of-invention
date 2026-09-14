@@ -1,17 +1,18 @@
-# witnessed
+# mother-of-invention
 
-What an observer has already seen attempted, across episodes.
+Necessity is the mother of invention. This package keeps the necessity: what an observer has already
+seen attempted, across episodes.
 
 A language model asked to act has no reason to try anything but the obvious: the obvious approach is
 the sensible one. If nobody in its world remembers the obvious approach being tried, nothing pushes it
-anywhere else. `witnessed` keeps that memory as plain data, per observer, so a caller can put it to a
+anywhere else. `mother-of-invention` keeps that memory as plain data, per observer, so a caller can put it to a
 mind in its own fiction: *this guard has seen that trick before*, *these envoys have heard that offer
 already*.
 
 Zero runtime dependencies. No I/O. The ledger is JSON you keep wherever you like.
 
 ```ts
-import { emptyLedger, beginEpisode, witness, seenBefore, parseLedger } from "witnessed";
+import { emptyLedger, beginEpisode, witness, seenBefore, parseLedger } from "mother-of-invention";
 
 let ledger = emptyLedger();
 ledger = beginEpisode(ledger, "episode-1");

@@ -61,7 +61,7 @@ export function emptyLedger(): Ledger {
 export function beginEpisode(ledger: Ledger, episode: string): Ledger {
   requireText(episode, "episode");
   if (ledger.episodes.includes(episode)) {
-    throw new Error(`witnessed: episode ${JSON.stringify(episode)} has already been begun`);
+    throw new Error(`mother-of-invention: episode ${JSON.stringify(episode)} has already been begun`);
   }
   return { ...ledger, episodes: [...ledger.episodes, episode] };
 }
@@ -84,7 +84,7 @@ export function seenBefore(
 ): Precedent[] {
   const position = ledger.episodes.indexOf(query.episode);
   if (position === -1) {
-    throw new Error(`witnessed: episode ${JSON.stringify(query.episode)} has not been begun`);
+    throw new Error(`mother-of-invention: episode ${JSON.stringify(query.episode)} has not been begun`);
   }
   const earlier = new Map(ledger.episodes.slice(0, position).map((e, i) => [e, i]));
 
@@ -109,19 +109,19 @@ export function seenBefore(
 /** Validates a ledger read back from wherever the caller keeps it. */
 export function parseLedger(value: unknown): Ledger {
   if (typeof value !== "object" || value === null || Array.isArray(value)) {
-    throw new Error("witnessed: a ledger must be an object");
+    throw new Error("mother-of-invention: a ledger must be an object");
   }
   const raw = value as Record<string, unknown>;
-  if (raw.version !== 1) throw new Error(`witnessed: unsupported ledger version ${JSON.stringify(raw.version)}`);
+  if (raw.version !== 1) throw new Error(`mother-of-invention: unsupported ledger version ${JSON.stringify(raw.version)}`);
   if (!Array.isArray(raw.episodes) || !raw.episodes.every((e) => typeof e === "string")) {
-    throw new Error("witnessed: episodes must be an array of strings");
+    throw new Error("mother-of-invention: episodes must be an array of strings");
   }
-  if (!Array.isArray(raw.accounts)) throw new Error("witnessed: accounts must be an array");
+  if (!Array.isArray(raw.accounts)) throw new Error("mother-of-invention: accounts must be an array");
 
   let ledger = emptyLedger();
   for (const episode of raw.episodes as string[]) ledger = beginEpisode(ledger, episode);
   for (const account of raw.accounts) {
-    if (typeof account !== "object" || account === null) throw new Error("witnessed: each account must be an object");
+    if (typeof account !== "object" || account === null) throw new Error("mother-of-invention: each account must be an object");
     ledger = witness(ledger, account as Account);
   }
   return ledger;
@@ -129,7 +129,7 @@ export function parseLedger(value: unknown): Ledger {
 
 function requireText(value: unknown, field: string): void {
   if (typeof value !== "string" || value.length === 0) {
-    throw new Error(`witnessed: ${field} must be a non-empty string`);
+    throw new Error(`mother-of-invention: ${field} must be a non-empty string`);
   }
 }
 
@@ -139,6 +139,6 @@ function checkAccount(account: Account, episodes: readonly string[]): void {
   requireText(account.observer, "observer");
   requireText(account.text, "text");
   if (!episodes.includes(account.episode)) {
-    throw new Error(`witnessed: episode ${JSON.stringify(account.episode)} has not been begun`);
+    throw new Error(`mother-of-invention: episode ${JSON.stringify(account.episode)} has not been begun`);
   }
 }

@@ -13,7 +13,7 @@
 #
 #     publisher:      GitHub Actions
 #     organization:   JavaDerek
-#     repository:     witnessed
+#     repository:     mother-of-invention
 #     workflow file:  release.yml      <- this file's name; renaming it breaks publishing
 #     environment:    (leave empty)
 #

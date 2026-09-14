@@ -50,7 +50,7 @@ const FORBIDDEN: Array<{ pattern: RegExp; what: string; why: string }> = [
  *  the guard breaks a test instead of silently narrowing them. */
 const NOT_FORBIDDEN = ["observer", "actor", "episode", "account", "witness", "ledger", "precedent", "attempt", "mind", "window"];
 
-describe("no consumer's vocabulary reaches witnessed", () => {
+describe("no consumer's vocabulary reaches mother-of-invention", () => {
   const files = scannedFiles();
 
   it("scans a meaningful number of files (guard against a vacuous pass)", () => {

@@ -8,7 +8,7 @@ import { resolve } from "node:path";
 
 const PACKAGE_JSON_PATH = resolve(__dirname, "..", "..", "package.json");
 
-describe("witnessed has zero runtime dependencies", () => {
+describe("mother-of-invention has zero runtime dependencies", () => {
   it("declares dependencies as {} in package.json", () => {
     const pkg = JSON.parse(readFileSync(PACKAGE_JSON_PATH, "utf8")) as {
       dependencies?: Record<string, string>;

@@ -1,4 +1,4 @@
-# witnessed — Claude Context
+# mother-of-invention — Claude Context
 
 ## What this is
 
@@ -8,7 +8,7 @@ episode: this actor attempted something, this observer perceived it, in these wo
 
 It exists because a mind that is never told what has been tried before has no reason to try anything
 else. The obvious approach is always the sensible one; necessity is what makes invention sensible.
-This package keeps the record a caller needs to create that necessity honestly, from inside its own
+Hence the name. This package keeps the record a caller needs to create that necessity honestly, from inside its own
 fiction.
 
 ## Its consumers, and it belongs to none of them
