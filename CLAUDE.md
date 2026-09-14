@@ -2,14 +2,26 @@
 
 ## What this is
 
+The home for mechanisms that stimulate novel thought in model-driven agents. Necessity is the mother
+of invention: a mind that has no reason to try anything but the obvious will not, so each mechanism
+here gives it a reason, generically, for any game that puts models in charge of characters.
+
+The owner's framing (2026-09-14): there may be many ways to stimulate novelty, and anything this work
+needs lives here. **Precedent is the first, not the scope.**
+
+### Mechanism 1: precedent (`src/ledger.ts`)
+
 What an observer has already seen attempted, across episodes. A plain-data ledger of accounts (per
 episode: this actor attempted something, this observer perceived it, in these words) and one query,
-`seenBefore`: what has this observer witnessed, before this episode?
+`seenBefore`: what has this observer witnessed, before this episode? A caller puts that to a mind from
+inside its own fiction, which makes the obvious approach stale honestly rather than by fiat.
 
-It exists because a mind that is never told what has been tried before has no reason to try anything
-else. The obvious approach is always the sensible one; necessity is what makes invention sensible.
-Hence the name. This package keeps the record a caller needs to create that necessity honestly, from inside its own
-fiction.
+### Adding a mechanism
+
+Always: generic (no consumer's words, by test), never deciding by code what text means, and at least
+one real caller before it ships. Today the whole package also has no I/O and no runtime dependencies,
+each by test. Those two describe what exists, not a ceiling: a mechanism that genuinely needs more (a
+model call, say) changes the guard deliberately, in its own commit, saying why.
 
 ## Its consumers, and it belongs to none of them
 
@@ -25,7 +37,7 @@ Their words are forbidden in this tree by `src/__tests__/vocabulary.test.ts` (tr
 files). Observer, actor, episode, account, witness, ledger, precedent and attempt are this package's
 words.
 
-## What it will not do
+## What precedent will not do
 
 - **Decide what counts as a repeat.** Accounts are the same only when their text is identical. Whether
   two phrasings are one idea is a judgement about meaning, and code never makes one here. A caller that

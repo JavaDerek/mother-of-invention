@@ -1,13 +1,20 @@
 # mother-of-invention
 
-Necessity is the mother of invention. This package keeps the necessity: what an observer has already
-seen attempted, across episodes.
+Necessity is the mother of invention. This package is for making a mind invent: mechanisms that
+stimulate novel attempts from language-model agents, each generic, each usable by any game that puts
+models in charge of characters.
 
-A language model asked to act has no reason to try anything but the obvious: the obvious approach is
-the sensible one. If nobody in its world remembers the obvious approach being tried, nothing pushes it
-anywhere else. `mother-of-invention` keeps that memory as plain data, per observer, so a caller can put it to a
-mind in its own fiction: *this guard has seen that trick before*, *these envoys have heard that offer
-already*.
+A language model asked to act has no reason to try anything but the obvious, because the obvious
+approach is the sensible one. The mechanisms here give it reasons.
+
+## Mechanisms
+
+### Precedent: what an observer has already seen tried
+
+The first mechanism. If nobody in a mind's world remembers the obvious approach being tried, nothing
+pushes it anywhere else. The precedent ledger keeps that memory as plain data, per observer and
+across episodes, so a caller can put it to a mind in its own fiction: *this guard has seen that trick
+before*, *these envoys have heard that offer already*.
 
 Zero runtime dependencies. No I/O. The ledger is JSON you keep wherever you like.
 
@@ -26,7 +33,7 @@ const saved = JSON.stringify(ledger);
 ledger = parseLedger(JSON.parse(saved)); // validated on the way back in
 ```
 
-## The model
+#### The model
 
 - **Episode:** one run. Episodes are ordered by when `beginEpisode` was called, and that order is what
   "before" means.
@@ -34,7 +41,7 @@ ledger = parseLedger(JSON.parse(saved)); // validated on the way back in
 - **`seenBefore`:** everything one observer witnessed in earlier episodes, optionally from one actor,
   grouped by identical text and ordered most recent first, then most frequent. `limit` keeps the top.
 
-## Deliberately not here
+#### Deliberately not here
 
 - **Deciding what counts as a repeat.** Two accounts match only when their text is identical. Judging
   whether two phrasings are one idea is a judgement about meaning, and this package makes none. Record

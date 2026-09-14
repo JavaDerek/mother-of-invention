@@ -1,7 +1,7 @@
 {
   "name": "mother-of-invention",
   "version": "0.1.0",
-  "description": "What an observer has already seen attempted, across episodes: a plain-data ledger and one query, so a caller can tell a mind what is no longer new. Zero dependencies, no I/O.",
+  "description": "Mechanisms that stimulate novel attempts from model-driven agents. First: precedent, what an observer has already seen tried across episodes. Zero dependencies, no I/O.",
   "license": "MIT",
   "author": "Derek Ferguson",
   "repository": {
@@ -43,9 +43,10 @@
   },
   "keywords": [
     "novelty",
-    "observer",
-    "ledger",
-    "agent",
+    "invention",
+    "agents",
+    "llm",
+    "precedent",
     "episodes"
   ],
   "files": [
