@@ -16,6 +16,15 @@ episode: this actor attempted something, this observer perceived it, in these wo
 `seenBefore`: what has this observer witnessed, before this episode? A caller puts that to a mind from
 inside its own fiction, which makes the obvious approach stale honestly rather than by fiat.
 
+### Mechanism 2: pick (`src/pick.ts`)
+
+A forced choice away from what an observer has seen: on a forced turn, the first candidate the
+injected recogniser calls `unseen` replaces a seen or unavailable choice; with none, an optional
+`regenerate` is asked once for fresh candidates. Driven and measured first in The Prisoner
+(its OPEN-VARIANT §21, §32, §36) before it moved here: regeneration raised forced turns that did
+something unseen from 23% to 65%, and free turns did not change. Never decides what a text means (the
+recogniser is injected) and never writes a text (it chooses among the mind's own).
+
 ### Adding a mechanism
 
 Always: generic (no consumer's words, by test), never deciding by code what text means, and at least

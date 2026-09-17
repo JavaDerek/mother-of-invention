@@ -50,6 +50,36 @@ ledger = parseLedger(JSON.parse(saved)); // validated on the way back in
 - **Prompt text.** How precedent is put to a mind is your content.
 - **Sharing.** An account reaches only the observer named on it. Record one per observer.
 
+### Pick: a forced choice away from what is already seen
+
+The second mechanism. Asking a mind to list alternatives does not change what it chooses, and a stated
+cost for the obvious approach does not either. Pick is a declared, partial force: on a turn the caller
+marks as forced, a choice the observer has already seen is replaced by the first of the mind's own
+candidates that is neither seen nor unavailable. Free turns are left alone and consult nothing, so they
+stay comparable with a run without pick.
+
+Whether a text is "seen" is a judgement about meaning, so the caller injects it. When every candidate is
+already seen, a caller may supply `regenerate`, which is asked once for fresh candidates and told every
+verdict (usually by asking the same mind again, told what is already known). The choice is always one of
+the mind's own texts: code picks among them and never writes one.
+
+```ts
+import { pick } from "mother-of-invention";
+
+const picked = await pick(ownChoice, candidates, {
+  force: turn % 2 === 0,
+  recognise: async (text) => ((await isKnown(text)) ? "seen" : (await isPossible(text)) ? "unseen" : "unavailable"),
+  regenerate: async (verdicts) => askTheMindAgain(verdicts), // optional
+});
+// picked.chosen, picked.overridden, picked.verdicts, picked.regenerated?
+```
+
+**What it was measured to do** in its first caller, a two-principal game with a 22-episode ledger, 3
+runs a side: forced turns that actually did something unseen went from 23% to 65% with `regenerate`.
+Six of eleven turns with nothing unseen became ideas the mind produced only when told its list was
+already known. Turns that were not forced did not change, so pick gives a mind new attempts but has not
+yet been shown to make it choose them unforced.
+
 ## License
 
 MIT
