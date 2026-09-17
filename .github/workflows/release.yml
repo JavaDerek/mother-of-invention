@@ -28,9 +28,9 @@
 # do not, before anything reaches the registry. A wrong tag should cost a
 # re-tag, never a wrong version published forever.
 #
-# THIS WORKFLOW HAS NOT RUN YET. The one-time npmjs.com
-# registration above is a human step outside any agent's reach, and no tag
-# has been pushed here.
+# 0.1.0 was published by hand (trusted publishing needs the package to exist).
+# The npmjs.com trusted-publisher registration above was done by the owner on
+# 2026-09-16, and 0.1.1 is the first release through this workflow.
 name: Release
 
 on:
