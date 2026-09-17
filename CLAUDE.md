@@ -9,6 +9,12 @@ here gives it a reason, generically, for any game that puts models in charge of 
 The owner's framing (2026-09-14): there may be many ways to stimulate novelty, and anything this work
 needs lives here. **Precedent is the first, not the scope.**
 
+**The bar (the owner's D2, 2026-09-17).** A mechanism is a *novelty mechanism* only once it changes
+what a mind chooses on a turn where **nothing is forcing it**. One that only improves a compelled
+choice is a **force**: useful, shippable, and labelled as such in the README, but not the thing this
+package is named for. Do not let a headline number from forced turns stand in for the free-turn
+measure — state both, and take the label from the second.
+
 ### Mechanism 1: precedent (`src/ledger.ts`)
 
 What an observer has already seen attempted, across episodes. A plain-data ledger of accounts (per
@@ -22,8 +28,10 @@ A forced choice away from what an observer has seen: on a forced turn, the first
 injected recogniser calls `unseen` replaces a seen or unavailable choice; with none, an optional
 `regenerate` is asked once for fresh candidates. Driven and measured first in The Prisoner
 (its OPEN-VARIANT §21, §32, §36) before it moved here: regeneration raised forced turns that did
-something unseen from 23% to 65%, and free turns did not change. Never decides what a text means (the
-recogniser is injected) and never writes a text (it chooses among the mind's own).
+something unseen from 23% to 65%, and free turns did not change. **By the bar above that makes it a
+working force, not yet a novelty mechanism** (the owner's D2, its caller's OPEN-VARIANT §40.2); the
+README says so where the number is. Never decides what a text means (the recogniser is injected) and
+never writes a text (it chooses among the mind's own).
 
 ### Adding a mechanism
 

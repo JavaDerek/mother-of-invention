@@ -7,6 +7,14 @@ models in charge of characters.
 A language model asked to act has no reason to try anything but the obvious, because the obvious
 approach is the sensible one. The mechanisms here give it reasons.
 
+## The bar a mechanism here has to clear
+
+A mechanism earns the name **novelty mechanism** when it changes what a mind chooses **on a turn
+where nothing is forcing it**. Making a mind that is being compelled to choose differently choose
+better is a real and useful thing, but it is a *force*, not yet novelty: the caller is still the one
+supplying the reason. Each mechanism below says which of the two it has been measured to be, against
+a real caller, and neither label is a promise about the other.
+
 ## Mechanisms
 
 ### Precedent: what an observer has already seen tried
@@ -52,6 +60,8 @@ ledger = parseLedger(JSON.parse(saved)); // validated on the way back in
 
 ### Pick: a forced choice away from what is already seen
 
+*A working force, not yet a novelty mechanism* — see the measurement below.
+
 The second mechanism. Asking a mind to list alternatives does not change what it chooses, and a stated
 cost for the obvious approach does not either. Pick is a declared, partial force: on a turn the caller
 marks as forced, a choice the observer has already seen is replaced by the first of the mind's own
@@ -77,8 +87,15 @@ const picked = await pick(ownChoice, candidates, {
 **What it was measured to do** in its first caller, a two-principal game with a 22-episode ledger, 3
 runs a side: forced turns that actually did something unseen went from 23% to 65% with `regenerate`.
 Six of eleven turns with nothing unseen became ideas the mind produced only when told its list was
-already known. Turns that were not forced did not change, so pick gives a mind new attempts but has not
-yet been shown to make it choose them unforced.
+already known. Turns that were not forced did not change (3 of 15 against 3 of 22), and outcomes did
+not improve.
+
+**So, against the bar above: a working force, not yet a novelty mechanism.** Its caller's owner ruled
+on that reading on 2026-09-17, and the package states it rather than letting the 23%→65% headline
+stand alone. Use pick when you are willing to compel a turn; do not expect it to make a mind reach for
+something new when you are not. What would clear the bar is a mechanism that changes a free turn — for
+instance carrying what a mind found under compulsion into the plan it makes when nothing compels it,
+so its own discovery becomes a thing it wants.
 
 ## License
 
