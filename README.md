@@ -1,5 +1,7 @@
 # mother-of-invention
 
+> **Archived 2026-10-31. Superseded.** These mechanisms were built for an approach (one model call per turn, with no loop) that has been replaced. This repository is kept read-only as a record; nothing in it is maintained. The published `0.1.2` stays installable.
+
 Necessity is the mother of invention. This package is for making a mind invent: mechanisms that
 stimulate novel attempts from language-model agents, each generic, each usable by any game that puts
 models in charge of characters.
